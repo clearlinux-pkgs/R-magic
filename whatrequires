@@ -1,10 +1,2 @@
 # This file contains recursive sources that require this package
-R-DendSer
-R-clue
-R-dendextend
-R-fpc
 R-geometry
-R-mvoutlier
-R-pdfCluster
-R-robCompositions
-R-seriation
