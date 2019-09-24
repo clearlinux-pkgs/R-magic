@@ -4,12 +4,13 @@
 #
 Name     : R-magic
 Version  : 1.5.9
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/magic_1.5-9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/magic_1.5-9.tar.gz
 Summary  : Create and Investigate Magic Squares
 Group    : Development/Tools
 License  : GPL-2.0
+Requires: R-abind
 BuildRequires : R-abind
 BuildRequires : buildreq-R
 
@@ -33,13 +34,13 @@ creation and investigation of magic squares and hypercubes, including
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552947752
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569361089
 
 %install
-export SOURCE_DATE_EPOCH=1552947752
+export SOURCE_DATE_EPOCH=1569361089
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -68,12 +69,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  magic || :
+R CMD check --no-manual --no-examples --no-codoc magic || :
 
 
 %files
