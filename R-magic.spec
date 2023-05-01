@@ -4,7 +4,7 @@
 #
 Name     : R-magic
 Version  : 1.6.1
-Release  : 49
+Release  : 50
 URL      : https://cran.r-project.org/src/contrib/magic_1.6-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/magic_1.6-1.tar.gz
 Summary  : Create and Investigate Magic Squares
